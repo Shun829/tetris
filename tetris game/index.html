@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tetirs Game</title>
+</head>
+<body>
+    <div class = "header"> Welcome the tetris game!<div>
+    <div class = "row">
+        <div class = "column-left">
+            
+            <div id="hold">
+                <div class = "text">HOLD</div>
+                <div id = "hold_board"></div>
+            </div>
+            
+            <div id="score">
+                <div class = "text">SCORE</div>
+                <div id = "score_board">
+                    <div class = "point">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "column-middle">
+            <div id = "game_board">
+                <div id = "menu">
+                    <img src="assets/logo.png" alt="" class = "logo">
+                    <div id = "play_button"> play </div>
+                </div>
+            </div>
+            <div id = "fail_board">
+                <p style="color: white; text-align: center; font-size: 24px;"> GAME OVER</p>
+                <div>
+                    <div id = "menu_button"> menu </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "column-right">
+            
+            <div id="next">
+                <div class = "text">NEXT</div> 
+                <div id = "next_board"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

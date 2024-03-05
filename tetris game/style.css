@@ -1,0 +1,170 @@
+
+body {
+    background: linear-gradient(0deg, #6139a5 0%, #4570df 100%); /*漸行變色  eg. inear-gradient(45deg, blue, red);  漸變軸為45度，從藍色漸變成紅色 */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    display: block;
+    margin: 0 auto 20px;
+    padding-top: 30px;
+    width: 150px;
+}
+.row{
+    display:flex;
+}
+.column-left{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.column-middle{
+    flex:0.7;
+    position: relative;
+}
+
+.column-right{
+    flex:2;
+    display: flex;
+    align-items:center;
+    
+}
+
+.text{
+    width:100%; 
+    font-size: 24px;
+    color:#3e5eba;
+    text-align: center;
+    border: 5px solid;
+    border-color: transparent transparent #3e5eba transparent  ;
+    margin-left: -5px;
+}
+
+#game_board {
+    width: 240px;
+    height: 480px;
+    border-radius: 5px;
+    border: 5px solid #3e5eba;
+    outline:5px solid white;
+    margin: 0 auto;
+    position:relative;
+    background: repeating-linear-gradient(rgba(22, 28, 67, 0.8), rgba(22, 28, 67, 0.8) 20px, rgba(23, 27, 63, 0.8) 20px,rgba(23, 27, 63, 0.8) 40px), 
+            repeating-linear-gradient(90deg, rgba(22, 28, 67, 0.8), rgba(22, 28, 67, 0.8) 20px, rgba(23, 27, 63, 0.8) 20px,rgba(23, 27, 63, 0.8) 40px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}   
+
+#hold {
+    border: 5px solid #3e5eba;
+    background: repeating-linear-gradient(rgba(22, 28, 67, 0.8), rgba(22, 28, 67, 0.8) 20px, rgba(23, 27, 63, 0.8) 20px,rgba(23, 27, 63, 0.8) 40px), 
+            repeating-linear-gradient(90deg, rgba(22, 28, 67, 0.8), rgba(22, 28, 67, 0.8) 20px, rgba(23, 27, 63, 0.8) 20px,rgba(23, 27, 63, 0.8) 40px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+#hold_board {
+    width: 120px;
+    height: 96px;
+    position:relative;
+}
+
+#score {
+    border: 5px solid #3e5eba;
+    background: repeating-linear-gradient(rgba(22, 28, 67, 0.8), rgba(22, 28, 67, 0.8) 20px, rgba(23, 27, 63, 0.8) 20px,rgba(23, 27, 63, 0.8) 40px), 
+            repeating-linear-gradient(90deg, rgba(22, 28, 67, 0.8), rgba(22, 28, 67, 0.8) 20px, rgba(23, 27, 63, 0.8) 20px,rgba(23, 27, 63, 0.8) 40px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+#score_board {
+    width: 120px;
+    height: 96px;
+    position: relative;
+}
+.point{
+    text-align: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color:#3e5eba;
+}
+
+#next {
+    border: 5px solid #3e5eba;
+    background: repeating-linear-gradient(rgba(22, 28, 67, 0.8), rgba(22, 28, 67, 0.8) 20px, rgba(23, 27, 63, 0.8) 20px,rgba(23, 27, 63, 0.8) 40px), 
+            repeating-linear-gradient(90deg, rgba(22, 28, 67, 0.8), rgba(22, 28, 67, 0.8) 20px, rgba(23, 27, 63, 0.8) 20px,rgba(23, 27, 63, 0.8) 40px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+#next_board {
+    width: 120px;
+    height: 288px;
+    position:relative;
+}
+
+
+.block {
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    border: 1px solid black;
+    position: absolute;
+    box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.5);
+}
+
+.ghost {
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    border: 1px solid black;
+    position: absolute;
+    box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.3);
+}
+
+#play_button{
+    margin:auto;
+    width: 80px;
+    border: 5px solid green;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+#play_button:hover, #menu_button:hover{
+    color: white;
+    filter: brightness(130%);
+    cursor: pointer;
+}
+
+#fail_board{
+    display: none;
+    width: 100%;
+    height:30%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    
+    outline:5px solid white;
+    background: repeating-linear-gradient(rgba(22, 28, 67, 0.8), rgba(22, 28, 67, 0.8) 20px, rgba(23, 27, 63, 0.8) 20px,rgba(23, 27, 63, 0.8) 40px), 
+            repeating-linear-gradient(90deg, rgba(22, 28, 67, 0.8), rgba(22, 28, 67, 0.8) 20px, rgba(23, 27, 63, 0.8) 20px,rgba(23, 27, 63, 0.8) 40px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+#menu_button{
+    margin:auto;
+    width: 80px;
+    border: 5px solid green;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
